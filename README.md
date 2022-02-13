@@ -4,6 +4,5 @@
 ### 使用技术
 ```
 1. webpack
-2. jquery
-3. typescript
+2. typescript
 ```
