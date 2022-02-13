@@ -5,7 +5,7 @@ const {CleanWebpackPlugin} = require("clean-webpack-plugin")
 module.exports = {
     mode:'development',
     // 入口文件
-    entry: './src/index.js',
+    entry: './src/index.ts',
     // 出口文件
     output: {
         // 路径
@@ -20,5 +20,15 @@ module.exports = {
         }),
         // 安装前删除未引用文件
         new CleanWebpackPlugin()
-    ]
+    ],
+    module:{
+        // ts-loader文件匹配规则
+        rules:[
+            // 凡是后缀名为ts的文件交由ts-loader处理
+            {test:/.ts$/,loader:"ts-loader"}
+        ]
+    },
+    resolve:{
+        extensions:[".ts",".js"]
+    }
 }
