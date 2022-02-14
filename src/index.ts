@@ -1,19 +1,17 @@
-import { Viewr } from "../interface/Point";
-import { Square } from "../models/square";
+import {Square} from '../models/square'
+import {squarePageView} from '../models/squareView'
+import $ from "jquery"
 
-class SquareConsoleView implements Viewr{
-    constructor(private square:Square){}
-    show(): void {
-        console.log(this.square.point,this.square.color)
-    }
-    remove(): void {
-        
-    }
+const sq = new Square({x:3,y:3},"red")
+sq.viewr = new squarePageView(sq,$("#container"))
+sq.point = {
+    x:3,
+    y:0
 }
 
-const sq = new Square({x:3,y:5},"red")
-sq.viewr = new SquareConsoleView(sq)
-
-sq.point = {x:2,y:3}
-sq.point = {x:3,y:4}
-sq.point = {x:4,y:5}
+// setInterval(() =>{
+//     sq.point = {
+//         x:3,
+//         y:sq.point.y+1
+//     }
+// },1000)

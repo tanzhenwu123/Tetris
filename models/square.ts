@@ -24,6 +24,10 @@ export class Square{
         return this._color
     }
 
+    set color(val:string){
+        this._color = val
+    }
+
     get viewr(){
         return this._iview != undefined ? this._iview : {show():void{},remove():void{}}
     }
